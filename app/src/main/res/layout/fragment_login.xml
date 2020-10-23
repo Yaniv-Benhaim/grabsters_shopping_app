@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
+    tools:context=".ui.fragments.login.LoginFragment">
+
+   <TextView
+       android:id="@+id/tvBrandName"
+       android:layout_marginLeft="20dp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="16dp"
+       android:fontFamily="cursive"
+       android:text="60 Minutes"
+       android:textStyle="bold"
+       android:textSize="22sp"
+       app:layout_constraintTop_toTopOf="parent"
+       tools:layout_editor_absoluteX="16dp" />
+
+   <TextView
+       android:id="@+id/tvTitleLogin"
+       android:gravity="center"
+       app:layout_constraintTop_toBottomOf="@id/tvBrandName"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Sign up and start shopping"
+       android:fontFamily="@font/aktiv_grotesk_bold"
+       android:textSize="26sp"
+       android:layout_marginLeft="16dp"
+       android:layout_marginTop="26dp"
+       android:textColor="@color/BLACK"/>
+
+   <TextView
+       android:id="@+id/tvDescriptionLogin"
+       android:gravity="center"
+       app:layout_constraintTop_toBottomOf="@id/tvTitleLogin"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Please choose how you want to continue setting up your account"
+       android:fontFamily="@font/aktiv_grotesk_regular"
+       android:textSize="16sp"
+       android:layout_marginLeft="16dp"
+       android:layout_marginTop="26dp"
+       android:textColor="@color/BLACK"/>
+
+   <com.airbnb.lottie.LottieAnimationView
+       app:layout_constraintTop_toBottomOf="@id/tvDescriptionLogin"
+       app:layout_constraintRight_toRightOf="parent"
+       android:id="@+id/lottieView"
+       android:elevation="10dp"
+       android:layout_width="match_parent"
+       android:layout_height="300dp"
+       app:lottie_autoPlay="true"
+       app:lottie_loop="true"
+       app:lottie_rawRes="@raw/lottie_register" />
+
+   <Button
+       app:layout_constraintBottom_toTopOf="@id/btnGuestLogin"
+       android:id="@+id/btnGoogleSignIn"
+       android:layout_width="match_parent"
+       android:layout_margin="20dp"
+       android:textAllCaps="false"
+       android:text="Continue with Google"
+       android:layout_height="60dp"
+       android:background="@drawable/btn_google_background"
+
+       />
+
+   <Button
+      android:id="@+id/btnGuestLogin"
+       android:layout_width="match_parent"
+       android:layout_height="60dp"
+      android:layout_margin="20dp"
+       android:textAllCaps="false"
+       android:background="@drawable/btn_guest_background"
+       android:text="Continue as guest"
+       app:layout_constraintBottom_toBottomOf="parent"
+
+      />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

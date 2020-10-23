@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <action
+        android:id="@+id/action_global_featuredFragment"
+        app:destination="@id/featuredFragment"
+        app:launchSingleTop="true"
+        app:enterAnim="@anim/slide_in_left"
+        app:exitAnim="@anim/slide_out_right"
+        app:popEnterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_out_left" />
+    <fragment
+        android:id="@+id/featuredFragment"
+        android:name="tech.gamedev.bolt.ui.fragments.featured.FeaturedFragment"
+        android:label="Featured"
+        tools:layout="@layout/fragment_featured"/>
+    <fragment
+        android:id="@+id/deliveryFragment"
+        android:name="tech.gamedev.bolt.ui.fragments.delivery.DeliveryFragment"
+        android:label="fragment_delivery"
+        tools:layout="@layout/fragment_delivery" />
+    <fragment
+        android:id="@+id/nearbyFragment"
+        android:name="tech.gamedev.bolt.ui.fragments.nearby.NearbyFragment"
+        android:label="fragment_nearby"
+        tools:layout="@layout/fragment_nearby" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="tech.gamedev.bolt.ui.fragments.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="tech.gamedev.bolt.ui.fragments.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="tech.gamedev.bolt.ui.fragments.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_featuredFragment"
+            app:destination="@id/featuredFragment"
+            app:popUpTo="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/introViewPagerFragment"
+        android:name="tech.gamedev.bolt.ui.fragments.intro.IntroViewPagerFragment"
+        android:label="fragment_intro_view_pager"
+        tools:layout="@layout/fragment_intro_view_pager" >
+        <action
+            android:id="@+id/action_introViewPagerFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/introViewPagerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="tech.gamedev.bolt.ui.fragments.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_introViewPagerFragment"
+            app:destination="@id/introViewPagerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/splashFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/splashFragment" />
+    </fragment>
+</navigation>
