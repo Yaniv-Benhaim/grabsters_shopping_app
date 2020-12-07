@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/LightBlueGrey"
+    tools:context=".ui.payment.PaymentActivity">
+
+    <TextView
+        android:id="@+id/tvShipping"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:drawableLeft="@drawable/ic_arrow_back"
+        android:fontFamily="@font/camber_bold"
+        android:gravity="start|center_vertical"
+        android:text="Shipping Details"
+        android:textColor="@color/BLACK"
+        app:layout_constraintBottom_toTopOf="@id/clShippingDetails"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clProcessingPayment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFF"
+        android:elevation="15dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvProcessingPayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="@string/processing_your_payment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progressPaymentBar" />
+
+        <ProgressBar
+            android:id="@+id/progressPaymentBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottiePaymentComplete"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/tvProcessingPayment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="false"
+            app:lottie_rawRes="@raw/payment_successfull" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clShippingDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="12dp"
+        android:background="@color/WHITE"
+        app:layout_constraintBottom_toTopOf="@id/tvBillingDetails"
+        app:layout_constraintTop_toBottomOf="@id/tvShipping">
+
+
+        <TextView
+            android:id="@+id/tvNameCheckout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:drawableRight="@drawable/ic_baseline_edit_24"
+            android:fontFamily="@font/camber_medium"
+            android:gravity="start|center_vertical"
+            android:text="Yaniv Ben Haim  (My Address)"
+            android:textColor="@color/BLACK"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvBusinessCheckout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="6dp"
+            android:drawableLeft="@drawable/ic_baseline_business_24"
+            android:fontFamily="@font/camber_regular"
+            android:gravity="start|center_vertical"
+            android:text=" Eicontex"
+            android:textColor="@color/BLACK"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvNameCheckout" />
+
+        <TextView
+            android:id="@+id/tvPhoneCheckout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="6dp"
+            android:drawableLeft="@drawable/ic_baseline_local_phone_24"
+            android:fontFamily="@font/camber_regular"
+            android:gravity="start|center_vertical"
+            android:text=" 054 246 1512"
+            android:textColor="@color/BLACK"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvBusinessCheckout" />
+
+        <TextView
+            android:id="@+id/tvAddressCheckout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="12dp"
+            android:drawableLeft="@drawable/ic_baseline_location_on_24"
+            android:fontFamily="@font/camber_regular"
+            android:gravity="start|center_vertical"
+            android:text=" Bar Kochva 23, Petah Tikva, Israel"
+            android:textColor="@color/BLACK"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPhoneCheckout" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/tvBillingDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/camber_bold"
+        android:gravity="start"
+        android:text="Shipping Details"
+        android:textColor="@color/BLACK"
+        app:layout_constraintBottom_toBottomOf="@id/clShippingDetails"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clShippingDetails" />
+
+    <CheckBox
+        android:id="@+id/checkBoxSameAsBillingAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        app:layout_constraintBottom_toTopOf="@id/tvOrderSummary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBillingDetails" />
+
+
+    <TextView
+        android:id="@+id/tvOrderSummary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/camber_bold"
+        android:gravity="start"
+        android:text="Order Summary"
+        android:textColor="@color/BLACK"
+        app:layout_constraintBottom_toTopOf="@id/rvCart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkBoxSameAsBillingAddress" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvOrderSummary" />
+
+    <TextView
+        android:id="@+id/tvSameAsShippingAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:fontFamily="@font/camber_regular"
+        android:gravity="start"
+        android:text="Same as shipping address"
+        android:textColor="@color/BLACK"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/checkBoxSameAsBillingAddress"
+        app:layout_constraintStart_toEndOf="@id/checkBoxSameAsBillingAddress"
+        app:layout_constraintTop_toBottomOf="@id/tvBillingDetails" />
+
+
+    <TextView
+        android:id="@+id/tvAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:fontFamily="@font/camber_bold"
+        android:text="Shipping Methods"
+        android:textColor="@color/BLACK"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSelectPaymentMethod" />
+
+    <TextView
+        android:id="@+id/tvGrabstersExpressShipping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/camber_regular"
+        android:gravity="start|center_vertical"
+        android:text="Grabsters 60 Minutes Express Shipping      $19.99"
+        android:textColor="@color/BLACK"
+        app:layout_constraintBottom_toBottomOf="@id/checkBoxGrabstersExpressShipping"
+        app:layout_constraintStart_toEndOf="@id/checkBoxGrabstersExpressShipping"
+        app:layout_constraintTop_toBottomOf="@id/tvAmount"
+
+        />
+
+    <CheckBox
+        android:id="@+id/checkBoxGrabstersExpressShipping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAmount" />
+
+    <TextView
+        android:id="@+id/tv7DayRegularShipping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/camber_regular"
+        android:gravity="start|center_vertical"
+        android:text="Regular Shipping                                                  $4.99"
+        android:textColor="@color/BLACK"
+        app:layout_constraintBottom_toBottomOf="@id/checkBoxRegularShipping"
+        app:layout_constraintStart_toEndOf="@id/checkBoxRegularShipping"
+        app:layout_constraintTop_toBottomOf="@id/tvGrabstersExpressShipping"
+
+        />
+
+    <CheckBox
+        android:id="@+id/checkBoxRegularShipping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkBoxGrabstersExpressShipping" />
+
+
+    <Button
+        android:id="@+id/tvSelectPaymentMethod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/btn_google_background"
+        android:gravity="center"
+        android:text="select payment method"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/tvAmount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rvCart" />
+
+
+    <Button
+        android:id="@+id/payButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:layout_marginBottom="124dp"
+        android:background="@drawable/btn_dark_transparent"
+        android:text="Click to pay"
+        android:textColor="@color/WHITE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

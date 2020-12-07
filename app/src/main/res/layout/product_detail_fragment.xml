@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.productdetail.ProductDetailFragment">
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabBackArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:backgroundTint="#FFFFFF"
+        android:elevation="4dp"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:backgroundTint="#FFFFFF"
+        android:elevation="4dp"
+        android:src="@drawable/ic_cart"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCartNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/circle_notification"
+        android:elevation="10dp"
+        android:fontFamily="@font/camber_bold"
+        android:gravity="center"
+        android:text="3"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/fabCart"
+        app:layout_constraintEnd_toEndOf="@id/fabCart"
+        app:layout_constraintTop_toTopOf="@id/fabCart" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/ivProductDetailImage"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/laptopexample2"
+                app:layout_constraintDimensionRatio="W,1:1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivProductDetailImage">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.5">
+
+                    <TextView
+                        android:id="@+id/tvDetailProductTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="24dp"
+                        android:fontFamily="@font/camber_bold"
+                        android:gravity="left"
+                        android:maxLines="1"
+                        android:text="Asus ZenBook Pro Duo"
+                        android:textColor="@color/BLACK"
+                        android:textSize="16sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvDetailProductPrice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/camber_bold"
+                        android:gravity="start"
+                        android:text="$ 1499.99"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="18sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvDetailProductTitle"
+                        app:layout_constraintWidth_percent="0.4" />
+
+                    <LinearLayout
+                        android:id="@+id/llStoreAndRatingContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="6dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toBottomOf="@id/tvDetailProductPrice">
+
+                        <TextView
+                            android:id="@+id/tvStoreNameExample"
+                            android:layout_width="0dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/camber_medium"
+                            android:gravity="center_vertical"
+                            android:text="Ivory"
+                            android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <RatingBar
+                                android:id="@+id/rating_bar"
+                                style="?android:attr/ratingBarStyleSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="2dp"
+                                android:isIndicator="false"
+                                android:numStars="5"
+                                android:rating="4"
+                                android:scaleX="1.2"
+                                android:scaleY="1.2"
+                                android:stepSize="1" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#50000000"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toBottomOf="@id/llStoreAndRatingContainer" />
+
+                    <LinearLayout
+                        android:id="@+id/llReviewContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@id/llSpecsContainer">
+
+                        <LinearLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvReviewExampleTitle"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/camber_bold"
+                                android:gravity="center_vertical"
+                                android:maxLines="1"
+                                android:text="Reviews"
+                                android:textColor="@color/BLACK" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvReviewTextPreview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginRight="10dp"
+                            android:fontFamily="@font/camber_medium"
+                            android:maxLines="5"
+                            android:text="John:"
+                            android:textColor="@color/BLACK"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tvReviewTextPreview2"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp"
+                            android:fontFamily="@font/camber_regular"
+                            android:maxLines="2"
+                            android:text="Recommend to all amazing laptop! got it in 45 minutes!!!"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llSpecsContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@id/line">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvProductSpecsExample"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/camber_bold"
+                                android:gravity="center_vertical"
+                                android:maxLines="1"
+                                android:text="@string/description"
+                                android:textColor="@color/BLACK" />
+
+                            <ImageView
+                                android:id="@+id/ivArrowDownExample"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:src="@drawable/ic_arrow_down" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvDetailProductDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginRight="10dp"
+                            android:maxLines="4"
+                            android:text="Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
+
+                    </LinearLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabLikeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:backgroundTint="@color/LightBlueGrey"
+        android:src="@drawable/heart2"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabShareBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:backgroundTint="@color/LightBlueGrey"
+        android:src="@drawable/ic_baseline_share_24"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/fabLikeBtn" />
+
+
+    <Button
+        android:id="@+id/tvBtnAddToCart"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_margin="24dp"
+        android:background="@drawable/add_to_cart_style"
+        android:elevation="4dp"
+        android:fontFamily="@font/camber_bold"
+        android:gravity="center"
+        android:text="Add to Cart"
+        android:textColor="@color/WHITE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.4" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

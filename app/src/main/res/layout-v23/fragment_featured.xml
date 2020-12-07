@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/LightBlueGrey"
+    tools:context=".ui.fragments.sales.SalesFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#C6000000"
+        android:elevation="5dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+
+            android:id="@+id/tvFeaturedCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/camber_bold"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text=" Amsterdam"
+            android:textColor="@color/WHITE"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!-- SEARCH VIEW-->
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/featuredSearchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/search_background"
+            android:elevation="2dp"
+            android:visibility="visible"
+            app:iconifiedByDefault="false"
+            app:layout_constraintTop_toBottomOf="@id/tvFeaturedCity"
+            app:queryBackground="@null"
+            app:queryHint="Search by name or brand..." />
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayoutFeatured"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/featuredSearchView"
+            app:tabMode="scrollable"
+            app:tabTextColor="@color/WHITE">
+
+
+        </com.google.android.material.tabs.TabLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.viewpager.widget.ViewPager
+
+        android:id="@+id/viewPagerFeatured"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clMain"
+
+        tools:ignore="NotSibling">
+
+    </androidx.viewpager.widget.ViewPager>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,14 +3,11 @@ package tech.gamedev.bolt.ui.fragments.splash
 import android.content.Context
 import android.os.Bundle
 import android.os.Handler
-import android.transition.Slide
-import android.transition.Transition
-import android.transition.TransitionManager
-import android.view.Gravity
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_splash.*
 import tech.gamedev.bolt.R
@@ -28,12 +25,12 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
 
         Handler().postDelayed({
 
-            if(false){
+            if (onBoardingFinished()) {
                 findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
-            }else {
+            } else {
                 findNavController().navigate(R.id.action_splashFragment_to_introViewPagerFragment)
             }
-            },4000)
+        }, 3000)
 
         return super.onCreateView(inflater, container, savedInstanceState)
     }
@@ -41,12 +38,13 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-            tvAppName.animate().apply {
-                duration = 2000
-                scaleXBy(0.4f)
-                scaleYBy(0.4f)
+        val animSlide = AnimationUtils.loadAnimation(
+            requireContext(),
+            R.anim.slide_in_animation_view
+        )
 
-            }.start()
+        iv_logo.startAnimation(animSlide)
+        lottieView2.startAnimation(animSlide)
 
 
     }

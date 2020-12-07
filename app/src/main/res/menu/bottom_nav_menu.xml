@@ -1,27 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/featuredFragment"
-        android:icon="@drawable/ic_baseline_store_24"
-        android:title="Featured" />
+        android:id="@+id/salesFragment"
+        android:icon="@drawable/ic_cart"
+        android:title="Sales"
+        app:showAsAction="always" />
 
     <item
-        android:id="@+id/deliveryFragment"
-        android:icon="@drawable/ic_baseline_offline_bolt_24"
-        android:title="Delivery" />
+        android:id="@+id/rentalsFragment"
+        android:icon="@drawable/ic_rentals"
+        android:title="Rentals"
+        app:showAsAction="always" />
 
     <item
-        android:id="@+id/nearbyFragment"
-        android:icon="@drawable/ic_baseline_location_on_24"
-        android:title="Nearby" />
+        android:id="@+id/servicesFragment"
+        android:icon="@drawable/ic_hiring"
+        android:title="Services"
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/searchFragment"
-        android:icon="@drawable/ic_baseline_search_24"
+        android:icon="@drawable/ic_search_new"
+        app:showAsAction="always"
         android:title="Search" />
 
     <item
         android:id="@+id/profileFragment"
-        android:icon="@drawable/ic_baseline_person_pin_24"
+        android:icon="@drawable/ic_profile_female"
+        app:showAsAction="always"
         android:title="Profile" />
 </menu>

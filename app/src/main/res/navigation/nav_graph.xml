@@ -6,33 +6,82 @@
     app:startDestination="@id/splashFragment">
 
     <action
-        android:id="@+id/action_global_featuredFragment"
-        app:destination="@id/featuredFragment"
+        android:id="@+id/action_global_salesFragment"
+        app:destination="@id/salesFragment"
         app:launchSingleTop="true"
         app:enterAnim="@anim/slide_in_left"
         app:exitAnim="@anim/slide_out_right"
         app:popEnterAnim="@anim/slide_in_right"
         app:popExitAnim="@anim/slide_out_left" />
+
+
+    <action
+        android:id="@+id/action_global_productDetailFragment"
+        app:destination="@id/productDetailFragment"
+        app:enterAnim="@anim/slide_in_left"
+        app:exitAnim="@anim/slide_out_right"
+        app:launchSingleTop="true"
+        app:popEnterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_out_left" />
+
+
     <fragment
-        android:id="@+id/featuredFragment"
-        android:name="tech.gamedev.bolt.ui.fragments.featured.FeaturedFragment"
+        android:id="@+id/salesFragment"
+        android:name="tech.gamedev.bolt.ui.fragments.sales.SalesFragment"
         android:label="Featured"
-        tools:layout="@layout/fragment_featured"/>
+        tools:layout="@layout/fragment_featured">
+        <action
+            android:id="@+id/action_salesFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_salesFragment_to_storeFragment"
+            app:destination="@id/storeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
     <fragment
-        android:id="@+id/deliveryFragment"
-        android:name="tech.gamedev.bolt.ui.fragments.delivery.DeliveryFragment"
+        android:id="@+id/rentalsFragment"
+        android:name="tech.gamedev.bolt.ui.fragments.rentals.RentalsFragment"
         android:label="fragment_delivery"
-        tools:layout="@layout/fragment_delivery" />
+        tools:layout="@layout/fragment_rentals">
+        <action
+            android:id="@+id/action_rentalsFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
     <fragment
-        android:id="@+id/nearbyFragment"
-        android:name="tech.gamedev.bolt.ui.fragments.nearby.NearbyFragment"
+        android:id="@+id/servicesFragment"
+        android:name="tech.gamedev.bolt.ui.fragments.services.ServicesFragment"
         android:label="fragment_nearby"
-        tools:layout="@layout/fragment_nearby" />
+        tools:layout="@layout/fragment_services">
+        <action
+            android:id="@+id/action_servicesFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="tech.gamedev.bolt.ui.fragments.search.SearchFragment"
         android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="tech.gamedev.bolt.ui.fragments.profile.ProfileFragment"
@@ -45,7 +94,11 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_featuredFragment"
-            app:destination="@id/featuredFragment"
+            app:destination="@id/salesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
             app:popUpTo="@id/loginFragment" />
     </fragment>
     <fragment
@@ -56,6 +109,10 @@
         <action
             android:id="@+id/action_introViewPagerFragment_to_loginFragment"
             app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
             app:popUpTo="@id/introViewPagerFragment" />
     </fragment>
     <fragment
@@ -75,5 +132,31 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popUpTo="@id/splashFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="tech.gamedev.bolt.ui.fragments.productdetail.ProductDetailFragment"
+        android:label="product_detail_fragment"
+        tools:layout="@layout/product_detail_fragment">
+        <argument
+            android:name="itemNumber"
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/storeFragment"
+        android:name="tech.gamedev.bolt.ui.fragments.store.StoreFragment"
+        android:label="fragment_store"
+        tools:layout="@layout/fragment_store">
+        <argument
+            android:name="storeId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_storeFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 </navigation>
